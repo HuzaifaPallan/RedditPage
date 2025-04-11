@@ -1,0 +1,1442 @@
+.pageContainer {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.mainContent {
+  flex: 1;
+  margin-left: 64px;
+  margin-top: 60px;
+  padding: 24px;
+  background-color: var(--main-bg);
+  overflow-x: hidden;
+  position: relative;
+  width: calc(100% - 64px);
+  transition: all 0.3s ease;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.titleSection {
+  flex: 1;
+  min-width: 250px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.redditIcon {
+  color: #FF4500;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.searchForm {
+  display: flex;
+  width: 400px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.searchInputWrapper {
+  flex: 1;
+  position: relative;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-light);
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px 10px 10px 36px;
+  border-radius: var(--btn-radius);
+  border: 1px solid var(--border-color);
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(138, 107, 74, 0.1);
+}
+
+.searchButton {
+  padding: 8px 16px;
+  background-color: #111111;
+  color: var(--text-primary);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--btn-radius);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all var(--animation-speed) ease;
+}
+
+.searchButton:hover {
+  background-color: var(--hover-color);
+  box-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+  transform: translateY(-1px);
+}
+
+.controlsBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 12px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.leftControls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.tabs::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.tabButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-secondary);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all var(--animation-speed) ease;
+}
+
+.tabButton:hover {
+  color: var(--text-primary);
+}
+
+.activeTab {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.filterWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: auto;
+  min-width: 0;
+}
+
+.filterControls {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.filterDropdown {
+  position: relative;
+  width: auto;
+  z-index: 10;
+}
+
+.activeFilters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.filterTags {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.filterTag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  background: rgba(26, 26, 26, 0.4);
+  border: 1px solid var(--border-color);
+  border-radius: var(--btn-radius);
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.filterTag button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.filterTag button:hover {
+  color: #ff4444;
+}
+
+.filterButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: var(--btn-radius);
+  border: 1px solid var(--border-color);
+  background-color: var(--card-bg);
+  color: var(--text-secondary);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all var(--animation-speed) ease;
+  white-space: nowrap;
+  width: auto;
+  margin-left: 0;
+}
+
+.filterButton:hover {
+  background-color: var(--hover-color);
+  border-color: var(--primary-light);
+}
+
+.filterMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-radius);
+  padding: 16px;
+  min-width: 280px;
+  box-shadow: var(--shadow-lg);
+  z-index: 100;
+}
+
+.filterGroup {
+  padding: 12px 0;
+}
+
+.filterGroup h4 {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  margin: 0 0 12px 0;
+  font-weight: 500;
+}
+
+.sortOptions, .timeOptions {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr;
+}
+
+.sortOption, .timeOption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--btn-radius);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all var(--animation-speed) ease;
+}
+
+.sortOption:hover, .timeOption:hover {
+  background: var(--hover-color);
+  border-color: var(--primary-color);
+  color: var(--text-primary);
+}
+
+.sortOption.active, .timeOption.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--text-inverse);
+}
+
+.timeOptions {
+  background: var(--card-bg-light);
+  padding: 8px;
+  border-radius: var(--card-radius);
+}
+
+.timeOption {
+  background: var(--card-bg);
+}
+
+.timeOption svg {
+  color: var(--primary-color);
+}
+
+.timeOption.active svg {
+  color: var(--text-inverse);
+}
+
+.tagFilterSection {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-radius);
+  padding: 20px;
+  margin-bottom: 16px;
+  width: 100%;
+  margin-left: 0;
+  margin-right: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.tagFilterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tagFilterHeader h3 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.tagInputContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.tagInputContainer form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.tagInput {
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  border-radius: 4px;
+  color: #ffffff;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.tagInput:focus {
+  outline: none;
+  border-color: #00ff9d;
+}
+
+.addTagButton {
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  border-radius: 4px;
+  color: #ffffff;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.addTagButton:hover {
+  background: #3a3a3a;
+  border-color: #00ff9d;
+}
+
+.predefinedTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tagButton {
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  border-radius: 4px;
+  color: #ffffff;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  min-width: fit-content;
+}
+
+.tagButton:hover {
+  background: #3a3a3a;
+  border-color: #00ff9d;
+}
+
+.tagSelected {
+  background: #00ff9d;
+  border-color: #00ff9d;
+  color: #000000;
+}
+
+.filterLabel {
+  color: #ffffff;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.postCard {
+  background-color: var(--card-bg);
+  border-radius: var(--card-radius);
+  border: 1px solid var(--border-color);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--animation-speed) ease;
+  width: 100%;
+  overflow: hidden;
+}
+
+.postCard:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--primary-light);
+}
+
+.postHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 14px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.postSubreddit {
+  color: #FF4500;
+  font-weight: 500;
+}
+
+.postTime {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-light);
+}
+
+.postTitle {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.postSnippet {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.postTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.postTag {
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  border-radius: 4px;
+  color: #ffffff;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.postTag:hover {
+  background: #3a3a3a;
+  border-color: #00ff9d;
+}
+
+.postTagHighlighted {
+  background: #00ff9d;
+  border-color: #00ff9d;
+  color: #000000;
+}
+
+.postFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.postStats {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.postStat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-light);
+}
+
+.postSentiment {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.postActions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.postAction {
+  padding: 8px 16px;
+  background-color: #111111;
+  color: var(--text-primary);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--btn-radius);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all var(--animation-speed) ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.postAction:hover {
+  background-color: var(--hover-color);
+  box-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+  transform: translateY(-1px);
+}
+
+.summarizeButton {
+  background-color: #1a1a1a !important;
+  border-color: #00ff9d !important;
+  color: #00ff9d !important;
+  transition: all 0.2s ease !important;
+}
+
+.summarizeButton:hover {
+  background-color: #2a2a2a !important;
+  box-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+}
+
+.summarizeButton.active {
+  background-color: #00ff9d !important;
+  color: #000000 !important;
+}
+
+.summarizeButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.summaryContainer {
+  margin-top: 16px;
+  padding: 16px;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.summarySlide {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 1000px;
+  }
+}
+
+.summaryHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.summaryIcon {
+  color: #00ff9d;
+  font-size: 1.2rem;
+}
+
+.summaryHeader h4 {
+  color: #ffffff;
+  font-size: 1rem;
+  margin: 0;
+  flex: 1;
+}
+
+.summaryMeta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.relevanceScore {
+  color: #999999;
+  font-size: 0.9rem;
+}
+
+.summaryOverallSentiment {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+
+.summaryPoints {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.summaryPoint {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 8px;
+  background: #2a2a2a;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  flex-wrap: wrap;
+}
+
+.summaryPoint:hover {
+  background: #333333;
+}
+
+.pointContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  flex: 1;
+}
+
+.pointBullet {
+  color: #00ff9d;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.pointContent p {
+  color: #ffffff;
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.pointMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pointSentiment {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+
+.confidenceScore {
+  color: #999999;
+  font-size: 0.8rem;
+}
+
+/* Sentiment colors */
+.positive {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: #4CAF50;
+}
+
+.negative {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #F44336;
+}
+
+.mixed {
+  background-color: rgba(255, 152, 0, 0.1);
+  color: #FF9800;
+}
+
+.loadMore {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.loadMoreButton {
+  padding: 10px 20px;
+  background-color: #111111;
+  color: var(--text-primary);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--btn-radius);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all var(--animation-speed) ease;
+}
+
+.loadMoreButton:hover {
+  background-color: var(--hover-color);
+  box-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 1024px) {
+  .mainContent {
+    margin-left: 56px;
+    width: calc(100% - 56px);
+    padding: 20px;
+  }
+  
+  .filterMenu {
+    width: 280px;
+    right: 0;
+  }
+  
+  .activeFilters {
+    width: 280px;
+    right: 0;
+  }
+  
+  .searchForm {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    margin-left: 56px;
+    width: calc(100% - 56px);
+    padding: 16px;
+    overflow-x: hidden;
+  }
+
+  .controlsBar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .filterWrapper {
+    margin-left: 0;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .filterControls {
+    gap: 8px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filterDropdown {
+    width: 100%;
+  }
+
+  .filterButton {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .filterMenu {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    border-radius: 12px 12px 0 0;
+    max-height: 80vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .tagFilterSection {
+    width: 100%;
+    margin: 0 0 12px 0;
+    padding: 16px;
+  }
+
+  .tagFilterHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .tagInput {
+    max-width: 100%;
+  }
+
+  .tagInputContainer form {
+    width: 100%;
+  }
+
+  .activeFilters {
+    padding: 8px 0;
+  }
+
+  .filterTag {
+    font-size: 12px;
+    padding: 4px 8px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .filterTag button {
+    padding: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainContent {
+    margin-left: 50px;
+    width: calc(100% - 50px);
+    padding: 12px;
+  }
+  
+  .title {
+    font-size: 22px;
+  }
+  
+  .subtitle {
+    font-size: 14px;
+  }
+  
+  .tabButton {
+    padding: 8px 12px;
+    white-space: nowrap;
+    font-size: 13px;
+  }
+  
+  .filterButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tagFilterSection {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  .tagButton {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .filterTag {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+
+  .filterTag button {
+    padding: 3px;
+  }
+}
+
+/* Trending Topics Section */
+.trendingContainer {
+  width: 100%;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.trendingHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.trendingTitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trendingTimeSelect {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--btn-radius);
+  color: var(--text-secondary);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.trendingTimeSelect:hover {
+  border-color: var(--primary-color);
+  color: var(--text-primary);
+}
+
+.trendingTimeSelect select {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding-right: 8px;
+}
+
+.trendingTimeSelect select:focus {
+  outline: none;
+}
+
+.trendingTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.trendingTableHeader {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.trendingTableHeader th {
+  padding: 12px 20px;
+  text-align: left;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.trendingTableRow {
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s ease;
+}
+
+.trendingTableRow:last-child {
+  border-bottom: none;
+}
+
+.trendingTableRow:hover {
+  background: var(--hover-color);
+}
+
+.trendingTableRow td {
+  padding: 16px 20px;
+  color: var(--text-primary);
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.trendingTopic {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.trendingMentions {
+  color: var(--text-secondary);
+  font-family: monospace;
+}
+
+.trendingSentiment {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.trendingSentiment.positive {
+  background: rgba(76, 175, 80, 0.1);
+  color: #4CAF50;
+}
+
+.trendingSentiment.negative {
+  background: rgba(244, 67, 54, 0.1);
+  color: #F44336;
+}
+
+.trendingSentiment.mixed {
+  background: rgba(255, 152, 0, 0.1);
+  color: #FF9800;
+}
+
+.trendingChange {
+  font-family: monospace;
+  font-weight: 500;
+}
+
+.trendingChange.positive {
+  color: #4CAF50;
+}
+
+.trendingChange.negative {
+  color: #F44336;
+}
+
+.trendingChange.new {
+  color: #2196F3;
+}
+
+.trendingActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.viewPostsButton {
+  padding: 6px 12px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--btn-radius);
+  color: var(--text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.viewPostsButton:hover {
+  background: var(--hover-color);
+  border-color: var(--primary-color);
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .trendingHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .trendingTableHeader th,
+  .trendingTableRow td {
+    padding: 12px 16px;
+  }
+
+  .trendingTableRow td:last-child {
+    text-align: left;
+  }
+
+  .trendingTimeSelect {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .trendingHeader {
+    padding: 12px;
+  }
+
+  .trendingTableHeader th,
+  .trendingTableRow td {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .viewPostsButton {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  .trendingSentiment {
+    padding: 2px 8px;
+    font-size: 12px;
+  }
+}
+
+/* Subreddits Section */
+.subredditsContainer {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  width: 100%;
+}
+
+.subredditCard {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.subredditCard:hover {
+  border-color: var(--primary-color);
+}
+
+.subredditHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.subredditIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #FF4500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.subredditName {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.subredditStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
+  padding: 16px 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.subredditStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.statValue {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.sentimentBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.sentimentBadge.positive {
+  background: rgba(76, 175, 80, 0.1);
+  color: #4CAF50;
+}
+
+.sentimentBadge.negative {
+  background: rgba(244, 67, 54, 0.1);
+  color: #F44336;
+}
+
+.sentimentBadge.mixed {
+  background: rgba(255, 152, 0, 0.1);
+  color: #FF9800;
+}
+
+.subredditActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.subredditButton {
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--btn-radius);
+  color: var(--text-secondary);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.subredditButton:hover {
+  background: var(--hover-color);
+  border-color: var(--primary-color);
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .subredditsContainer {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .subredditCard {
+    padding: 16px;
+  }
+  
+  .subredditStats {
+    gap: 8px;
+  }
+  
+  .statValue {
+    font-size: 14px;
+  }
+  
+  .subredditButton {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+/* Analytics Section */
+.analyticsContainer {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 100%;
+}
+
+.analyticsCard {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-radius);
+  padding: 20px;
+}
+
+.analyticsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.analyticsTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.analyticsValue {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 12px 0;
+}
+
+.analyticsChart {
+  width: 100%;
+  height: 200px;
+  margin-top: 16px;
+  position: relative;
+}
+
+.analyticsLegend {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.legendColor {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+/* Update media queries to include new sections */
+@media (max-width: 768px) {
+  .trendingContainer,
+  .subredditsContainer,
+  .analyticsContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .analyticsCard {
+    padding: 16px;
+  }
+
+  .analyticsChart {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .trendingCard,
+  .subredditCard,
+  .analyticsCard {
+    padding: 12px;
+  }
+
+  .analyticsValue {
+    font-size: 20px;
+  }
+
+  .analyticsChart {
+    height: 160px;
+  }
+}
+
+.analyticsPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 48px 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-radius);
+  width: 100%;
+  min-height: 300px;
+}
+
+.placeholderIcon {
+  color: #00FF9D;
+  margin-bottom: 24px;
+}
+
+.analyticsPlaceholder h2 {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0 0 16px 0;
+}
+
+.analyticsPlaceholder p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .analyticsPlaceholder {
+    padding: 32px 20px;
+  }
+  
+  .analyticsPlaceholder h2 {
+    font-size: 20px;
+  }
+  
+  .analyticsPlaceholder p {
+    font-size: 14px;
+  }
+}
